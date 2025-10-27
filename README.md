@@ -43,7 +43,7 @@ Projeto do TCC que orquestra validações de qualidade de dados com **Great Expe
 ## Pré-requisitos
 - **Windows** com Docker Desktop (WSL2)  
 - **Ollama** no host (Windows) com o modelo: `ollama pull llama3.1`  
-- (Opcional) **Python 3.12** + venv local se quiser editar/rodar GE fora do Docker
+- **Python 3.12** + venv local se quiser editar/rodar GE fora do Docker
 
 ---
 
