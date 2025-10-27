@@ -1,0 +1,306 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {
+        "runtime_batch_identifier_name": "microdados_2022"
+      },
+      "batch_spec_passthrough": {
+        "reader_method": "read_csv",
+        "reader_options": {
+          "encoding": "latin1",
+          "sep": ";"
+        }
+      },
+      "data_asset_name": "my_runtime_asset_name",
+      "data_connector_name": "default_runtime_data_connector_name",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20251023T150735.529918Z",
+      "pandas_data_fingerprint": "65268e5cdfd779937930485ab8058155"
+    },
+    "batch_spec": {
+      "data_asset_name": "my_runtime_asset_name",
+      "path": "/opt/airflow/data/microdados_2022.CSV",
+      "reader_method": "read_csv",
+      "reader_options": {
+        "encoding": "latin1",
+        "sep": ";"
+      }
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "microdados_2022_checkpoint",
+    "expectation_suite_name": "microdados_suite",
+    "great_expectations_version": "0.18.12",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2025-10-23T15:07:35.497160+00:00"
+    },
+    "validation_id": null,
+    "validation_time": "20251023T150752.415864Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "TP_CATEGORIA_ADMINISTRATIVA",
+          "value_set": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 573019,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "CO_IES"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 573019,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "CO_MUNICIPIO",
+          "regex": "^\\d{7}$"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 573019,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 20,
+            "value": 0
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "partial_unexpected_list": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "unexpected_count": 9603,
+        "unexpected_percent": 1.6758606608157847,
+        "unexpected_percent_nonmissing": 1.6758606608157847,
+        "unexpected_percent_total": 1.6758606608157847
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "TP_GRAU_ACADEMICO",
+          "value_set": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 573019,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 20,
+            "value": 0
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          756,
+          1207,
+          1319,
+          1453,
+          1790,
+          1980,
+          2240,
+          2404,
+          2421,
+          2954,
+          2976,
+          3036,
+          3489,
+          3804,
+          4712,
+          5051,
+          5834,
+          6302,
+          7346
+        ],
+        "partial_unexpected_list": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "unexpected_count": 1407,
+        "unexpected_percent": 0.24554159635195344,
+        "unexpected_percent_nonmissing": 0.24554159635195344,
+        "unexpected_percent_total": 0.24554159635195344
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "QT_VG_NOVA",
+          "min_value": 0
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 573019,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 5,
+    "success_percent": 60.0,
+    "successful_expectations": 3,
+    "unsuccessful_expectations": 2
+  },
+  "success": false
+}

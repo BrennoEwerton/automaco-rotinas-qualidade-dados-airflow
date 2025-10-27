@@ -1,0 +1,347 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {
+        "runtime_batch_identifier_name": "microdados_2022"
+      },
+      "batch_spec_passthrough": {
+        "reader_method": "read_csv",
+        "reader_options": {
+          "encoding": "latin1",
+          "sep": ";"
+        }
+      },
+      "data_asset_name": "my_runtime_asset_name",
+      "data_connector_name": "default_runtime_data_connector_name",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20251025T002811.384483Z",
+      "pandas_data_fingerprint": "09382648c5b585c691e523e0e2c0928c"
+    },
+    "batch_spec": {
+      "data_asset_name": "my_runtime_asset_name",
+      "path": "/opt/airflow/data/microdados_2022.CSV",
+      "reader_method": "read_csv",
+      "reader_options": {
+        "encoding": "latin1",
+        "sep": ";"
+      }
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "microdados_2022_checkpoint",
+    "expectation_suite_name": "microdados_suite",
+    "great_expectations_version": "0.18.12",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2025-10-25T00:28:11.355757+00:00"
+    },
+    "validation_id": null,
+    "validation_time": "20251025T002811.438202Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "TP_CATEGORIA_ADMINISTRATIVA",
+          "value_set": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 1,
+            "value": 10
+          },
+          {
+            "count": 1,
+            "value": 11
+          },
+          {
+            "count": 1,
+            "value": 20
+          },
+          {
+            "count": 1,
+            "value": 99
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "partial_unexpected_list": [
+          99,
+          10,
+          11,
+          20
+        ],
+        "unexpected_count": 4,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_nonmissing": 100.0,
+        "unexpected_percent_total": 100.0
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "CO_IES"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 4,
+        "partial_unexpected_counts": [
+          {
+            "count": 1,
+            "value": null
+          },
+          {
+            "count": 1,
+            "value": null
+          },
+          {
+            "count": 1,
+            "value": null
+          },
+          {
+            "count": 1,
+            "value": null
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "partial_unexpected_list": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "unexpected_count": 4,
+        "unexpected_percent": 100.0
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "CO_MUNICIPIO",
+          "regex": "^\\d{7}$"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 1,
+            "value": "123"
+          },
+          {
+            "count": 1,
+            "value": "1234"
+          },
+          {
+            "count": 1,
+            "value": "12345678"
+          },
+          {
+            "count": 1,
+            "value": "ABC"
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "partial_unexpected_list": [
+          "123",
+          "1234",
+          "12345678",
+          "ABC"
+        ],
+        "unexpected_count": 4,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_nonmissing": 100.0,
+        "unexpected_percent_total": 100.0
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "TP_GRAU_ACADEMICO",
+          "value_set": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 1,
+            "value": 0
+          },
+          {
+            "count": 1,
+            "value": 5
+          },
+          {
+            "count": 1,
+            "value": 8
+          },
+          {
+            "count": 1,
+            "value": 99
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "partial_unexpected_list": [
+          99,
+          5,
+          0,
+          8
+        ],
+        "unexpected_count": 4,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_nonmissing": 100.0,
+        "unexpected_percent_total": 100.0
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "4cd3468ee5af273ae3fd020419cda46b",
+          "column": "QT_VG_NOVA",
+          "min_value": 0
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 1,
+            "value": -99
+          },
+          {
+            "count": 1,
+            "value": -10
+          },
+          {
+            "count": 1,
+            "value": -2
+          },
+          {
+            "count": 1,
+            "value": -1
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "partial_unexpected_list": [
+          -1,
+          -2,
+          -10,
+          -99
+        ],
+        "unexpected_count": 4,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_nonmissing": 100.0,
+        "unexpected_percent_total": 100.0
+      },
+      "success": false
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 5,
+    "success_percent": 0.0,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 5
+  },
+  "success": false
+}
