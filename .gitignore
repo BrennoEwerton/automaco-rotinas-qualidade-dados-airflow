@@ -1,0 +1,45 @@
+# --- Python / venv / cache ---
+.venv/
+__pycache__/
+*.pyc
+
+# --- IDEs ---
+.vscode/
+.idea/
+
+# --- Airflow (gerados em runtime) ---
+airflow_project/logs/
+airflow_project/plugins/__pycache__/
+airflow_project/config/  # se tiver configs locais geradas
+postgres-db-volume/
+
+# --- Great Expectations (não versionar dados/validações locais) ---
+gx/uncommitted/
+gx/plugins/__pycache__/
+
+# mantemos expectativas e checkpoints:
+# gx/expectations/**  (permitido)
+# gx/checkpoints/**   (permitido)
+# great_expectations.yml (permitido)
+
+# --- Dados locais (NÃO subir CSVs) ---
+data/
+airflow_project/data/
+gx/uncommitted/data/
+*.CSV
+*.csv
+*.parquet
+*.zip
+
+# (opcional) mantenha o diretório, mas sem arquivos:
+!data/.gitkeep
+!airflow_project/data/.gitkeep
+
+# --- Segredos ---
+.env
+.env.*
+*.key
+*.pem
+
+# --- Docker artefatos locais ---
+**/.DS_Store

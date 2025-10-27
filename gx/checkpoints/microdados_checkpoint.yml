@@ -1,0 +1,34 @@
+name: microdados_checkpoint
+config_version: 1.0
+class_name: SimpleCheckpoint
+module_name: great_expectations.checkpoint
+run_name_template: '%Y%m%d-%H%M%S-my-run-name-template'
+validations:
+  - batch_request:
+      datasource_name: my_datasource
+      data_connector_name: default_runtime_data_connector_name
+      data_asset_name: my_runtime_asset_name
+      runtime_parameters:
+        path: /opt/airflow/data/microdados_2022.CSV
+        reader_method: read_csv
+        reader_options:
+          encoding: latin1
+          sep: ";"
+      batch_identifiers:
+        runtime_batch_identifier_name: microdados_2022
+    expectation_suite_name: microdados_suite
+action_list:
+  - name: store_validation_result
+    action:
+      class_name: StoreValidationResultAction
+  - name: store_evaluation_params
+    action:
+      class_name: StoreEvaluationParametersAction
+  - name: update_data_docs
+    action:
+      class_name: UpdateDataDocsAction
+evaluation_parameters: {}
+runtime_configuration: {}
+profilers: []
+ge_cloud_id: null
+expectation_suite_ge_cloud_id: null
