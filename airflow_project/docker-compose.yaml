@@ -50,8 +50,8 @@ x-airflow-common:
 
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
-    - "C:/Users/Brenno Ewerton/Projeto/data_quality_project/gx:/opt/airflow/gx"
-    - "C:/Users/Brenno Ewerton/Projeto/data_quality_project/gx/uncommitted/data:/opt/airflow/data"
+    - "C:/Users/Seu Usuario/Projeto/data_quality_project/gx:/opt/airflow/gx"
+    - "C:/Users/Seu Usuario/Projeto/data_quality_project/gx/uncommitted/data:/opt/airflow/data"
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
