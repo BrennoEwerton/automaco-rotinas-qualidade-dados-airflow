@@ -25,7 +25,7 @@ if not LLM_URL.endswith("/v1"):
     LLM_URL = f"{LLM_URL}/v1"
 
 # === E-mail de destino ===
-EMAIL_TO = os.getenv("ALERT_EMAIL_TO", "brennoewerton1@gmail.com")
+EMAIL_TO = os.getenv("ALERT_EMAIL_TO", "seu_email@gmail.com")
 
 
 def run_gx_checkpoint(**context):
