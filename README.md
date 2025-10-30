@@ -34,7 +34,7 @@ Projeto do TCC que orquestra validações de qualidade de dados com **Great Expe
   Suites: `gx/expectations/`  
   Checkpoints: `gx/checkpoints/`  
   Config: `gx/great_expectations.yml`  
-  (artefatos locais não versionados): `gx/uncommitted/`
+  Artefatos locais: `gx/uncommitted/`
 
 > Dicas complementares por pasta: veja `airflow_project/README.md` e `gx/README.md`.
 
@@ -228,7 +228,7 @@ gx/
 
 ├─ great_expectations.yml # config raiz do GE
 
-└─ uncommitted/ # artefatos locais (gitignored)
+└─ uncommitted/ # artefatos locais
 
 
 ### Onde encontrar
@@ -243,7 +243,7 @@ gx/
 - **Config do GE**:  
   `gx/great_expectations.yml`
 
-- **Dados locais e artefatos não versionados**:  
+- **Dados locais e artefatos**:  
   `gx/uncommitted/` (ex.: data docs locais, run store local etc.)
 
 ## Como replicar localmente (opcional)
@@ -256,10 +256,10 @@ Se quiser atualizar/validar a suite fora do Airflow:
    pip install -r requirements.txt
 
 
-2) Inicializar GE (se necessário) e abrir Jupyter para editar regras:
+2) Inicializar GE e abrir Jupyter para editar regras:
    ```
    great_expectations init
-   jupyter notebook
+   great_expectations datasource new
    ```
 
   No notebook, monte um RuntimeBatchRequest apontando para seu CSV com:
