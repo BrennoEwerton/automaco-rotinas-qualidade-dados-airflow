@@ -246,32 +246,67 @@ gx/
 - **Dados locais e artefatos**:  
   `gx/uncommitted/` (ex.: data docs locais, run store local etc.)
 
-## Como replicar localmente (opcional)
+## Como replicar localmente 
 Se quiser atualizar/validar a suite fora do Airflow:
 
-1) Criar venv (na raiz do projeto) e instalar requisitos:
+1) Criar as pastas necessárias:
+   ```bat
+   cd C:\Users\Seu_Usuario
+   mkdir Projeto
+   cd Projeto
+   mkdir data_quality_project
+   cd data_quality_project
+   ```
+   
+2) Criar venv (na raiz do projeto) e instalar requisitos:
    ```bat
    python -m venv .venv
    .venv\Scripts\activate
    pip install -r requirements.txt
 
 
-2) Inicializar GE e abrir Jupyter para editar regras:
+3) Inicializar o projeto GE:
    ```
    great_expectations init
+   ```
+   
+4) Criar o Datasource:
+   ```
    great_expectations datasource new
    ```
+   
+    > Esses comandos que abrem um Jupyter, você pode se basear no que tem nesse repositório (conferir caminhos no começo do  README), já que ele está funcional.
+    
 
-  No notebook, monte um RuntimeBatchRequest apontando para seu CSV com:
+5) Criar a Expectation Suite:
+   ```
+   great_expectations suite new
+   ```
+   
+# Depois disso, basta configurar o Docker + Airflow. Para isso, siga o passo a passo abaixo:
 
-  - encoding="latin1"
-  - sep=";"
+1) Criar pasta do projeto Airflow:
+  ```
+   mkdir airflow_project
+   cd airflow_project
+  ```
 
-3) Salve a suite em gx/expectations/ e o checkpoint em gx/checkpoints/.
-
-  No Airflow, o diretório gx/ do Windows é montado em /opt/airflow/gx. Assim, a DAG enxerga a suite/checkpoint exatamente como estão aqui.
-
-# Observação
-
-> Os data docs e stores locais que o GE cria vão em gx/uncommitted/ (não versionados). Se quiser regerar/visualizar, rode localmente ou adapte uma action na DAG para publicar onde preferir.
-
+2) Baixe o `docker-compose.yaml` (aqui, eu recomendo que você usa o que já está configurado nesse repositório e apenas ajuste os caminhos para os da sua máquina):
+   ```
+   curl -LfO “https://airflow.apache.org/docs/apache-airflow/2.9.3/docker-compose.yaml”
+   
+3) Crie as pastas necessárias:
+   ```
+   mkdir dags logs plugins
+   
+4) Configure o arquivo `.env` (use o que está nesse repositório e mude o e-mail)
+   
+5) Inicialize o Airflow e suba o Container:
+   ```
+   docker-compose up airflow-init
+   docker-compose up -d
+   ```
+   > Acesse o Airflow pelo navegador: http://localhost:8080
+   > user e senha: airflow 
+   
+6) Depois disso, basta adicionar o arquivo na pasta `data` dentro do airflow_project e a DAG na pasta de `dags`, também no airflow_project. Todos os arquivos necessários estão nesse repositório.
