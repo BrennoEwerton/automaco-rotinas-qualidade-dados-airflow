@@ -7,6 +7,9 @@ Projeto do TCC que orquestra validações de qualidade de dados com **Great Expe
 2) Se **100% sucesso** → move o arquivo para `validated/` e **encerra**  
 3) Se **falha** → move para `quarantine/`, extrai regras quebradas, chama **LLM** (Ollama) para gerar **sugestões** em `.md` e envia **e-mail** com o relatório
 
+## Arquitetura
+<img width="1949" height="748" alt="image" src="https://github.com/user-attachments/assets/87304a7e-5692-4a67-b7b6-34b90c40f3b6" />
+
 ---
 
 ## Onde encontrar cada arquivo/parte do projeto
